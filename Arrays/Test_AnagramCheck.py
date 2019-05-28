@@ -47,11 +47,10 @@ def anagram(s, s2):
         return False
 
     # compare dicts
-    return (counts_s > counts_s2) - (counts_s < counts_s2)
-
+    return counts_s == counts_s2
 
 # Driver programm
-anagram('clint eabtwood','old west action')
+anagram('clint eastwood','old west action')
 
 
 
