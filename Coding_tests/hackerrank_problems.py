@@ -161,18 +161,21 @@ Sample Output 0
 def jumpingOnClouds(c):
     steps = 0
     i = 0
-    while i <= len(c) - 2:
-        if c[i+1] == 0 and c[i+2] == 0:
+    if len(c) >= 3:
+        while i <= len(c) - 3:
+            if c[i+2] == 0:
+                steps += 1
+                i += 2
+            elif c[i+2] == 1:
+                steps += 1
+                i += 1
+            elif c[i+1] == 1:
+                steps += 1
+                i += 2
+        if c[-2] == 0 and c[-3] != 0:
             steps += 1
-            i += 2
-        elif c[i+1] == 0 and c[i+2] == 2:
-            steps += 1
-            i += 1
-        elif c[i+1] == 1:
-            steps += 1
-            i += 1
+    else:
+        steps = 1
     return steps
-jumpingOnClouds([0, 0, 0, 0, 1, 0])
-
 
 
