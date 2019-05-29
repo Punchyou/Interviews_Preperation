@@ -54,13 +54,7 @@ anagram('clint eastwood','old west action')
 
 
 
-
-
-
-
-
-
-
+# Writer's Solution
 # 
 # def anagram(s, t):
 #     """
