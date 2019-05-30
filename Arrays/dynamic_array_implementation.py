@@ -46,7 +46,7 @@ class DynamicArray(object):
         B = self.make_array(new_cap) #New bigger array
         
         for k in range(self.n):
-            B[k] = self.A[k] # Referenceing the existing values of A
+            B[k] = self.A[k] # Referencing the existing values of A
             
             self.A = B #call A the B
             self.capacity = new_cap #reset the capacity

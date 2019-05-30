@@ -21,11 +21,11 @@ def pair_sum(ar, k):
     Finds the unique pairs that sum up to a specific value.
     """
 
-    for i, j in enumerate(ar):
+    for i, val in enumerate(ar):
         ar = ar[i:]
-        for m, n in enumerate(ar):
-            if i != m and j + n == k: # try it with one-line statement
-                print([j, n])
+        for j, val2 in enumerate(ar):
+            if i != j and val + val2 == k: # try it with one-line statement
+                print(val, val2)
 
 pair_sum([1,3,2,2],4)
 

@@ -24,13 +24,13 @@ def anagram(s, s2):
     """
     Finds if a string is an anagram of another string.
     """
-    def count_letters(s):
+    def count_letters(string):
         """
         Creates dictionary about the occurances of letters
         occur in a string.
         """
         counts = {}
-        for letter in s:
+        for letter in string:
             if letter not in counts.keys():
                 counts[letter] = 1
             else:
