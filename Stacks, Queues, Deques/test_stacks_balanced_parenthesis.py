@@ -59,7 +59,8 @@ is_balanced("[][][()]{[([])]}")
 #     stack = []
 
 #     for paren in s:
-
+          # keep track of the parenthesis in a stack
+          # we want the last opening parenthesis to be closed first
 #         if paren in opening:
 #             stack.append(paren)
         
@@ -67,9 +68,13 @@ is_balanced("[][][()]{[([])]}")
 #             # if the parenthesis is not an opening
 #             # and there is no matching with an opening one
 #             # the len of stack is 0
+
+#            # check if the stack is empty
+#            # because there is no associated with this closing one
 #             if len(stack) == 0:
 #                 return False
-            
+
+#             #check if the last oppened par is the corresponding closing match               
 #             last_open = stack.pop()
 #             if (last_open, paren) not in matches:
 #                 return False
