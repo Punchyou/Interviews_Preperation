@@ -23,7 +23,7 @@ class Node():
         self.value = value
         self.nextnode = None
 
-# create the nodes
+# create the nodes    
 a = Node(1)
 b = Node(2)
 c = Node(3)
@@ -67,18 +67,14 @@ is_cycle_list()
 # c.nextnode = a
 
 # def is_cycle(node):
-    
-#     marker1 = node
-#     marker2 = node
-
-#     while marker1 != None and marker2.nextnode != None:
-#         marker1 = marker1.nextnode
-#         marker2 - marker2.nextnode.nextnode
-    
-#     if marker2 == marker1:
-#         return True
-    
+#     #     Use fast and slow pointer
+#     fast, slow = node, node
+#     while fast and fast.nextnode:
+#         fast = fast.nextnode
+#         if fast == slow:
+#             return True
+#         fast = fast.nextnode
+#         slow = slow.nextnode
 #     return False
-            
 
 # is_cycle(a)
