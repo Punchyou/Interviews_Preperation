@@ -1,0 +1,33 @@
+"""
+Using an enterprise appropriate programming language of your choice,
+sort the data by each attribute (both ascending and descending)
+and display the result.
+"""
+
+dict1 = [                   {
+                             "name": "carl", 
+                             "age": 38, 
+                             "skills": "awesome",
+                             "modesty": "awesome",
+                             "startDate": "2015-03-02T09:00:00.000000Z"
+              },            { 
+                             "name": "elson", 
+                             "age": 53, 
+                             "skills": "average",
+                             "modesty": "terrible",
+                             "startDate": "2017-02-20T09:00:00.000000Z"
+              },            { 
+                             "name": "david", 
+                             "age": 32, 
+                             "skills": "good",
+                             "modesty": "average",
+                             "startDate": "20/12/2014"
+              },            { 
+                             "name": "ben", 
+                             "age": 41, 
+                             "skills": "pretty good",
+                             "modesty": "good",
+                             "startDate": "2012-06-31T09:00:00.000000Z"
+              } 
+] }
+
