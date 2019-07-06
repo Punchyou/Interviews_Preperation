@@ -45,8 +45,43 @@ class BinaryTree(object):
     def getRootVal(self):
         return self.key
 
+    # # implementing preorder inside the class
+    # def preorder(self):
+    #     print(self.key)
+    #     if self.leftChild:
+    #         self.leftChild.preorder()
+    #     if self.rightChild:
+    #         self.rightChild.preorder()
+
 r = BinaryTree("a")
 r.insertLeft("b")
+r.insertLeft("m")
 r.insertRight("c")
+r.insertRight("d")
 r.getLeftChild().getRootVal()
 r.getRightChild().getRootVal()
+
+# preorder implementation outside of class
+def preorder(tree):
+    if tree != None:
+        print(tree.getRootVal())
+        preorder(tree.getLeftChild())
+        preorder(tree.getRightChild())
+
+# postorder implementation outside of class
+def postorder(tree):
+    if tree != None:
+        postorder(tree.getLeftChild())
+        postorder(tree.getRightChild())
+        print(tree.getRootVal())
+
+# postorder implementation outside of class
+def inorder(tree):
+    if tree != None:
+        inorder(tree.getLeftChild())
+        print(tree.getRootVal())
+        inorder(tree.getRightChild())
+
+preorder(r)
+postorder(r)
+inorder(r)
