@@ -27,41 +27,62 @@ class BinaryHeap():
         self.heapList = [0]
         self.currentSize = 0
 
-def percUp(self, i):
-    """ Retains the priority in the heap."""
-    # while parent
-    while i // 2 > 0:
-        # if element < its parent then swap
-        if self.heapList[i] < self.heapList[i // 2]:
-            self.heapList[i // 2], self.heapList[i] = \
-            self.heapList[i], self.heapList[i // 2]
-            
-        i = i // 2
+    def percUp(self, i):
+        """ Retains the priority in the heap."""
+        # while parent
+        while i // 2 > 0:
+            # if element < its parent then swap
+            if self.heapList[i] < self.heapList[i // 2]:
+                self.heapList[i // 2], self.heapList[i] = \
+                self.heapList[i], self.heapList[i // 2]
+                
+            i = i // 2
 
-def insert(self, k):
-    """ Inserts elements to the heap."""
-    self.heapList.append(k)
-    self.currentSize += 1
-    self.percUp(self.currentSize)
+    def insert(self, k):
+        """ Inserts elements to the heap."""
+        self.heapList.append(k)
+        self.currentSize += 1
+        self.percUp(self.currentSize)
 
-def percDown(self, i):
-    """ Swaps the elements in the position i
-    with the smallest child."""
-    # while child
-    while (i * 2) <= self.currentSize:
-        # min child
-        mc = self.minChild(i)
-        # if element > min child then swap them
-        if self.heapList[i] > self.heapList[mc]:
-            self.heapList[i], self.heapList[mc] = \
-            self.heapList[mc], self.heapList[i]
+    def percDown(self, i):
+        """ Swaps the element in the i position 
+        with the smallest child."""
+        # while child
+        while (i * 2) <= self.currentSize:
+            # min child
+            mc = self.minChild(i)
+            # if element > min child then swap them
+            if self.heapList[i] > self.heapList[mc]:
+                self.heapList[i], self.heapList[mc] = \
+                self.heapList[mc], self.heapList[i]
 
-def minChild(self, i):
-    """ Returns the index of the smallest child."""
-    # if right or left child > element
-    if i * 2 + 1 > self.currentSize:
-        return i * 2
-    elif self.heapList[i*2] < self.healList[i * 2 + 1]:
-        return i * 2
-    else:
-        return i * 2 + 1
+    def minChild(self, i):
+        """ Returns the index of the smallest child."""
+        # if right or left child > element
+        if i * 2 + 1 > self.currentSize:
+            return i * 2
+        elif self.heapList[i*2] < self.heapList[i * 2 + 1]:
+            return i * 2
+        else:
+            return i * 2 + 1
+
+    def delMin(self):
+        """ Deletes the minimum element."""
+        # heapList[1] is the root node, the minimum value
+        return_val = self.heapList[1]
+        self.heapList[1] = self.heapList[self.currentSize]
+        self.currentSize -= 1
+        self.heapList.pop()
+        self.percDown(1)
+        return return_val
+    
+    def buildHeap(self, a_list):
+        """ Creates an entile list and then builds a heap."""
+        i = len(a_list) // 2
+        self.currentSize = len(a_list)
+        self.heapList = [0] + a_list[:]
+        while (i > 0):
+            self.percDown(i)
+            i -= 1
+
+    
